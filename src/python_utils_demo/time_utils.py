@@ -7,15 +7,7 @@ _PART_RE = re.compile(r"(?P<value>\d+)\s*(?P<unit>[smhd])", re.IGNORECASE)
 
 def parse_duration(text: str) -> int:
     """
-    Парсинг длительности:
-      - "45s" -> 45
-      - "90m" -> 5400
-      - "2h" -> 7200
-      - "1h30m" -> 5400
-
-    Возвращает секунды.
-
-    BUG: парсит только первый кусок и игнорирует остаток.
+    Парсинг длительности; возвращает секунды
     """
     text = text.strip()
     if not text:
