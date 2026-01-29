@@ -22,9 +22,9 @@ def normalize_email(email: str) -> str:
         local = local.lower()
         return f"{local}@{domain}"
 
-    return f"{local}@{domain}" 
+    return f"{local.lower()}@{domain}"
 
-_slug_bad_chars = re.compile(r"[^a-z0-9]+")
+_slug_bad_chars = re.compile(r"[^a-z0-9]+"
 
 def slugify(text: str) -> str:
     """
